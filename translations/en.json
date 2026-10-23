@@ -1,0 +1,33 @@
+{
+  "_meta": { "name": "English" },
+  "screen": {
+    "pause": "Pause",
+    "resume": "Resume",
+    "stop": "Stop",
+    "light": "Light",
+    "confirm_stop": "Sure?",
+    "remaining_hours": "{hours}h {minutes}m left",
+    "remaining_minutes": "{n} min left",
+    "no_value": "--",
+    "no_stage": "Waiting for printer",
+    "nozzle": "Nozzle",
+    "bed": "Bed",
+    "layers": "Layers"
+  },
+  "app": {
+    "name": "Bambu Printer",
+    "summary": "Print status and controls for a Bambu Lab printer.",
+    "tile_name": "Bambu Printer",
+    "tile_example": "Print progress, temperatures, layers, and controls",
+    "input_print_data": "Printer data sensor",
+    "input_print_data_hint": "Select the template sensor with progress, stage, time, temperature, and layer attributes.",
+    "input_pause": "Pause button",
+    "input_pause_hint": "Select this printer's Bambu Lab pause button entity.",
+    "input_resume": "Resume button",
+    "input_resume_hint": "Select this printer's Bambu Lab resume button entity.",
+    "input_stop": "Stop button",
+    "input_stop_hint": "Select this printer's Bambu Lab stop button entity.",
+    "input_chamber_light": "Chamber light",
+    "input_chamber_light_hint": "Select the printer's chamber light entity. Some models name it camera light."
+  }
+}

@@ -1,0 +1,64 @@
+defaults:
+  PRINT_DATA: sensor.bambu_tessera_data
+  PAUSE_BUTTON: button.bambu_pause
+  RESUME_BUTTON: button.bambu_resume
+  STOP_BUTTON: button.bambu_stop
+  CHAMBER_LIGHT: light.bambu_chamber_light
+
+sensor:
+  - platform: homeassistant
+    id: bambu_progress
+    entity_id: ${PRINT_DATA}
+    attribute: progress
+    internal: true
+  - platform: homeassistant
+    id: bambu_remaining_time
+    entity_id: ${PRINT_DATA}
+    attribute: remaining_time
+    internal: true
+  - platform: homeassistant
+    id: bambu_nozzle_temperature
+    entity_id: ${PRINT_DATA}
+    attribute: nozzle_temperature
+    internal: true
+  - platform: homeassistant
+    id: bambu_bed_temperature
+    entity_id: ${PRINT_DATA}
+    attribute: bed_temperature
+    internal: true
+  - platform: homeassistant
+    id: bambu_current_layer
+    entity_id: ${PRINT_DATA}
+    attribute: current_layer
+    internal: true
+  - platform: homeassistant
+    id: bambu_total_layers
+    entity_id: ${PRINT_DATA}
+    attribute: total_layers
+    internal: true
+
+text_sensor:
+  - platform: homeassistant
+    id: bambu_stage
+    entity_id: ${PRINT_DATA}
+    attribute: current_stage
+    internal: true
+  - platform: homeassistant
+    id: bambu_light_state
+    entity_id: ${CHAMBER_LIGHT}
+    internal: true
+
+bambu_print:
+  id: bambu_print_plugin
+  progress: bambu_progress
+  remaining_time: bambu_remaining_time
+  nozzle_temperature: bambu_nozzle_temperature
+  bed_temperature: bambu_bed_temperature
+  current_layer: bambu_current_layer
+  total_layers: bambu_total_layers
+  stage: bambu_stage
+  light_state: bambu_light_state
+  pause_button: ${PAUSE_BUTTON}
+  resume_button: ${RESUME_BUTTON}
+  stop_button: ${STOP_BUTTON}
+  chamber_light: ${CHAMBER_LIGHT}

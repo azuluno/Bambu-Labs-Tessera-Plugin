@@ -1,0 +1,13 @@
+states:
+  sensor.bambu_tessera_data:
+    state: running
+    attributes:
+      progress: 48
+      current_stage: printing
+      remaining_time: 92
+      nozzle_temperature: 220
+      bed_temperature: 60
+      current_layer: 84
+      total_layers: 176
+  light.bambu_chamber_light:
+    state: "off"

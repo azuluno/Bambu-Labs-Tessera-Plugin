@@ -1,0 +1,31 @@
+id: bambu_print
+version: 0.1.0
+api: "0.14"
+icon: printer-3d
+maintainer: azuluno
+license: MIT
+stage: beta
+topics: [tech]
+requires:
+  esphome: 2026.6.2
+boards: any
+flash_kb: 16
+
+permissions:
+  read_entities: ["{print_data}", "{chamber_light}"]
+  home_assistant_actions: [button.press, light.toggle]
+
+inputs:
+  - { id: print_data, kind: entity, scope: screen, domains: [sensor], label: input_print_data, hint: input_print_data_hint }
+  - { id: pause_button, kind: entity, scope: screen, domains: [button], label: input_pause, hint: input_pause_hint }
+  - { id: resume_button, kind: entity, scope: screen, domains: [button], label: input_resume, hint: input_resume_hint }
+  - { id: stop_button, kind: entity, scope: screen, domains: [button], label: input_stop, hint: input_stop_hint }
+  - { id: chamber_light, kind: entity, scope: screen, domains: [light], label: input_chamber_light, hint: input_chamber_light_hint }
+
+tiles:
+  - id: dashboard
+    name: tile_name
+    icon: printer-3d
+    sizes: { min: 2x3, max: 3x4 }
+    memory: 2600
+    example: tile_example
