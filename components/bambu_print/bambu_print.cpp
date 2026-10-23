@@ -140,7 +140,7 @@ namespace esphome::bambu_print
                 if (minutes >= 60)
                 {
                     time_text = tessera::fill(plugin_->text("remaining_hours"), "hours", std::to_string(minutes / 60));
-                    time_text = tessera::fill(time_text, "minutes", std::to_string(minutes % 60));
+                    time_text = tessera::fill(time_text.c_str(), "minutes", std::to_string(minutes % 60));
                 }
                 else
                 {
@@ -170,7 +170,7 @@ namespace esphome::bambu_print
             }
             else
             {
-                std::snprintf(value, sizeof(value), "%s", plugin_->text("no_value").c_str());
+                std::snprintf(value, sizeof(value), "%s", plugin_->text("no_value"));
             }
             ui::set_text(layers_value_, value);
 
@@ -267,7 +267,7 @@ namespace esphome::bambu_print
             }
             else
             {
-                std::snprintf(value, sizeof(value), "%s", plugin_->text("no_value").c_str());
+                std::snprintf(value, sizeof(value), "%s", plugin_->text("no_value"));
             }
             ui::set_text(label, value);
         }
